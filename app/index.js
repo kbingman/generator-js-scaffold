@@ -2,14 +2,8 @@ var generators = require('yeoman-generator');
 
 module.exports = generators.Base.extend({
 
-    // The name `constructor` is important here
-    constructor: function () {
-        generators.Base.apply(this, arguments);
-        console.log('init here');
-    },
     paths: function () {
         this.sourceRoot();
-        // returns './templates'
     },
     writing: function () {
         this.fs.copyTpl(
@@ -61,10 +55,6 @@ module.exports = generators.Base.extend({
             'marx'
         ];
         this.bowerInstall(bowerDependencies, { 'save': true });
-        // this.bulkDirectory(
-        //     this.destinationPath('bower_components/marx/scss'),
-        //     this.destinationPath('src/css/marx')
-        // );
     },
     installBuildTools: function () {
         var devDependencies = [
@@ -88,7 +78,7 @@ module.exports = generators.Base.extend({
         this.npmInstall(devDependencies, { 'saveDev': true });
     },
     end: function () {
-        console.log('cleanup here');
+        console.log('finished');
     }
 
 });
