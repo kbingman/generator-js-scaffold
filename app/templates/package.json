@@ -6,7 +6,6 @@
         "build:js": "browserify src/js/app.js -t babelify > public/js/app.js",
         "build:css": "node-sass --output-style compressed src/css -o public/css",
         "build": "npm run build:js & npm run build:css",
-        "copy:css": "cp -r bower_components/marx/scss/ src/css/marx",
         "livereload": "livereload public",
         "start": "npm run build & serve public & npm run watch & npm run livereload",
         "test": "karma start",
